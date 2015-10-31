@@ -1,0 +1,45 @@
+html { }
+body { }
+
+/* Master Header */
+.master_header { }
+
+/* Master Menu */
+.master_menu { }
+
+/* Master Body */
+.master_body { }
+
+/* Master Footer */
+.master_footer { margin: 20px 0 20px 0; }
+
+/***********************************
+ Screen Sizes / Devices
+************************************/
+/* Standard < 1000px ----------- */
+/*
+@media only screen and (max-width : 1000px)
+{
+	body { background-color: white; background-image: none; }
+	.master_body { 
+		width: auto;
+		margin: 0px 10px 0px 10px; 
+		padding: 0px;
+		border-radius: 0px; 
+		-moz-border-radius: 0px; 
+		-webkit-border-radius: 0px;
+	}
+}
+*/
+
+/* Standard < 600px ----------- */
+/*@media only screen and (max-width : 600px) { }*/
+
+/* Mobile (default) ----------- */
+/*@media only screen and (max-device-width : 1024px) { }*/
+		
+/* Mobile (landscape) ----------- */
+/*@media only screen and (max-device-width : 1024px) and (orientation : landscape) { }*/
+
+/* Mobile (portrait) ----------- */
+/*@media only screen and (max-device-width : 1024px) and (orientation : portrait) { }*/

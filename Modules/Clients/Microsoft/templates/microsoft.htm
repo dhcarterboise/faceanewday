@@ -1,0 +1,121 @@
+<div id="mainbar" data-ng-controller="microsoft as vm" >
+
+    <div class="row">
+        <img src="Assets/images/microsoft.gif" width="200px" height="75px" style="float: left" />
+        <h2 align="right">Microsoft Website</h2>
+    </div>
+    <br><br>
+
+    <div class="row" ng-class="vm.statusType" ng-if="vm.statusMessage">
+        <span ng-bind-html="vm.statusMessage"></span>
+        <span ng-if="vm.isLoggedIn"> Token Expiration in {{ vm.tokenExpiration }} sec</span>
+        <span ng-if="!vm.isLoggedIn && vm.errors"></span>
+    </div>
+
+    <!--- User s -->
+
+    <div class="row" ng-if="!vm.isLoggedIn">
+        <div class="row">
+            <div class="col-md-3">
+                <select
+                        class="form-control"
+                        name="microsoftWhere"
+                        id="microsoftWhere"
+                        ng-change="vm.changeServer()"
+                        ng-model="vm.server"
+                        ng-options="server.name for server in vm.servers"
+                        style="width: 250px"
+                        >
+                    <option value="">Choose a Server to connect:</option>
+                </select>
+            </div>
+            <div class="col-md-9">
+                <select
+                        class="form-control"
+                        name="users"
+                        id="users"
+                        ng-change="vm.changeUser()"
+                        ng-model="vm.user"
+                        ng-options="user.name for user in vm.users"
+                        style="width: 250px"
+                        >
+                    <option value="">Choose a User to connect with:</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <br><br>
+            <div class="col-md-12">
+                <p>Please enter your login credentials:</p>
+
+                <form name="login-form" class="form-horizontal" ng-submit="vm.submitLogin()">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="username">Email Address</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="username" name="username" placeholder="Email Address" autocapitalize="off"
+                                   autocorrect="off" autocomplete="on" ng-model="vm.loginUsername" required autofocus />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="password">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="password" name="password" placeholder="Password" autocapitalize="off"
+                                   autocorrect="off" autocomplete="on" ng-model="vm.loginPassword" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default" ng-disabled="loginForm.$invalid || !vm.server">Sign In</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-if="vm.isLoggedIn">
+
+        <div align="center">
+            <h4>Logged in By <span style="color: firebrick">{{ vm.loginType }}</span> with <span style="color: #7ac142">{{ vm.user.name }}</span></h4>
+        </div>
+
+        <button class="col-lg-2 btn btn-info" ng-click="vm.refreshToken()">Refresh Token</button>
+        <button class="col-lg-3 btn btn-success" ng-click="vm.getStuff(1)">Get Public Stuff</button>
+        <button class="col-lg-3 btn btn-warning" ng-click="vm.getStuff(2)">Get Private Stuff</button>
+        <button class="col-lg-2 btn btn-warning" ng-click="vm.getStuff(3)">Get Admin Stuff</button>
+        <button class="col-lg-1 btn btn-danger" ng-click="vm.logoff()">Logoff</button>
+        <button class="col-lg-1 btn btn-info" ng-click="vm.hideData()">{{ vm.hideShow }}</button>
+
+        <div style="margin-top: 25px">
+
+            <pre ng-if="vm.stuff && !vm.hide">
+                {{ vm.stuff | json }}
+            </pre>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 50px">
+
+        <ul style="list-style-type: none">
+            <li ng-if="vm.errors">Error(s): <pre style="color:red" >{{ vm.errors }}</pre></li>
+            <li>ClientID: <pre>{{ vm.clientId }}</pre></li>
+            <li>Authenticated With {{ vm.server.name }}  <pre> {{ vm.isLoggedIn }}</pre></li>
+            <li>Connection Info:
+                <pre ng-if="!vm.server" >You must select a server to connect to</pre>
+                <pre ng-if="vm.server">{{ vm.server | json }}</pre>
+            </li>
+            <li ng-if="vm.microsoftAuthData">Microsoft Auth Data:
+                <pre>
+                    {{ vm.microsoftAuthData | json }}
+                </pre>
+            </li>
+        </ul>
+
+
+    </div>
+
+
+</div>
