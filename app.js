@@ -8,17 +8,14 @@
             'ngRoute',              // routing
             'ngSanitize',           // sanitizes html bindings (ex: sidebar.js)
             'LocalStorageModule'    // angular-local-storage: HTML5 storage, cookies for older browsers
-            // Custom modules 
-
-            // 3rd Party Modules
 
         ]);
 
     // Application Data
     app.value('appData', {
-        siteTitle: 'Velma Clients',
-        pageTitle: 'Velma CliSnapShot Postcard',
-        copyrightText: new Date().getFullYear() + ' NSN Solutions, Inc. All rights reserved.'
+        siteTitle: 'FaceANewDay',
+        pageTitle: 'FaceANewDay',
+        copyrightText: new Date().getFullYear() + ' FaceANewDay. All rights reserved.'
     });
 
     // Site Initialization

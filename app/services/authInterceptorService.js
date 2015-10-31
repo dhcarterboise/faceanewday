@@ -19,26 +19,11 @@
 
         var _request = function (config) {
 
-            //session.clientId
-
             config.headers = config.headers || {};
 
-            var authData;
-            switch(configure.clientId) {
-                case "appleWeb":
-                    authData = localStorageService.get('authorizationDataApple');
-                    break;
-                case "googleWeb":
-                    authData = localStorageService.get('authorizationDataGoogle');
-                    break;
-                case "microsoftWeb":
-                    authData = localStorageService.get('authorizationDataMicrosoft');
-                    break;
-            }
+            var authData = localStorageService.get('authorizationDataVelma');
 
             if (authData) {
-
-                //log.debug(configure.clientId +  "Interceptor Auth Data ", authData.access_token);
                 config.headers.Authorization = 'Bearer ' + authData.access_token;
             }
 
@@ -46,9 +31,6 @@
         };
 
         var _responseError = function (rejection) {
-            //if (rejection.status === 401) {
-            //    $location.path('/login');
-            //}
             return $q.reject(rejection);
         };
 

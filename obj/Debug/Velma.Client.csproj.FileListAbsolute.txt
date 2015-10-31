@@ -1,6 +1,0 @@
-C:\Users\dcarter\Documents\Code\GitHub\Velma.Api\Velma.api\src\Velma.Client\bin\Velma.Client.dll.config
-C:\Users\dcarter\Documents\Code\GitHub\Velma.Api\Velma.api\src\Velma.Client\bin\Velma.Client.dll
-C:\Users\dcarter\Documents\Code\GitHub\Velma.Api\Velma.api\src\Velma.Client\bin\Velma.Client.pdb
-C:\Users\dcarter\Documents\Code\GitHub\Velma.Api\Velma.api\src\Velma.Client\obj\Debug\Velma.Client.csprojResolveAssemblyReference.cache
-C:\Users\dcarter\Documents\Code\GitHub\Velma.Api\Velma.api\src\Velma.Client\obj\Debug\Velma.Client.dll
-C:\Users\dcarter\Documents\Code\GitHub\Velma.Api\Velma.api\src\Velma.Client\obj\Debug\Velma.Client.pdb

@@ -22,21 +22,11 @@
             config: config,
             clientId: '',
             connectionStatus: {
-              appleWeb: {
+              velma: {
                   loggedIn: false,
                   server: {},
                   tokenExpiration: 60
-              },
-              googleWeb: {
-                  loggedIn: false,
-                  server: {},
-                  tokenExpiration: 60
-              },
-              microsoftWeb: {
-                    loggedIn: false,
-                    server: {},
-                    tokenExpiration: 60
-                },
+              }
             },
             // Methods
             login: login,
@@ -61,20 +51,7 @@
                 data: "userName=" + username + "&password=" + password + "&client_id=" + clientId + "&grant_type=password"
             }).success(function (data) {
 
-                // Set Local Storage Value
-                switch(clientId) {
-
-                    case 'appleWeb':
-                        localStorageService.set('authorizationDataApple', data);
-                        break;
-                    case 'googleWeb':
-                        localStorageService.set('authorizationDataGoogle', data);
-                        break;
-                    case 'microsoftWeb':
-                        localStorageService.set('authorizationDataMicrosoft', data);
-                        break;
-                }
-
+                localStorageService.set('authorizationDataVelma', data);
                 deferred.resolve(data);
 
             }).error(function (error) {
@@ -97,20 +74,7 @@
                 data: "refresh_token=" + refreshToken + "&client_id=" + clientId  + "&grant_type=refresh_token"
             }).success(function (data) {
 
-                // Set Local Storage Value
-                switch(clientId) {
-
-                    case 'appleWeb':
-                        localStorageService.set('authorizationDataApple', data);
-                        break;
-                    case 'googleWeb':
-                        localStorageService.set('authorizationDataGoogle', data);
-                        break;
-                    case 'microsoftWeb':
-                        localStorageService.set('authorizationDataMicrosoft', data);
-                        break;
-                }
-
+                localStorageService.set('authorizationDataVelma', data);
                 deferred.resolve(data);
 
             }).error(function (error) {

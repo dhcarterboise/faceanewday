@@ -5,30 +5,22 @@
         {
             url: '/',
             config: {
-                templateUrl: 'modules/home/templates/home.htm',
-                title: 'Accounts'
+                templateUrl: 'app/templates/home.htm',
+                title: 'Home'
             }
         },
         {
-            url: '/apple',
+            url: '/login',
             config: {
-                templateUrl: 'modules/clients/apple/templates/apple.htm',
-                title: 'Google'
+                templateUrl: 'app/templates/login.htm',
+                title: 'Login'
             }
         },
         {
-            url: '/google',
+            url: '/pageOne',
             config: {
-                templateUrl: 'modules/clients/google/templates/google.htm',
-                title: 'Google'
-            }
-        },
-
-        {
-            url: '/microsoft',
-            config: {
-                templateUrl: 'modules/clients/microsoft/templates/microsoft.htm',
-                title: 'Microsoft'
+                templateUrl: 'app/templates/pageOne.htm',
+                title: 'Page 1'
             }
         },
     ];
