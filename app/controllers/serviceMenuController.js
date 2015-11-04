@@ -2,16 +2,16 @@
 
     'use strict';
 
-    var controllerId = 'pageOne';
+    var controllerId = 'serviceMenu';
     angular.module('app').controller(controllerId, [
         '$scope',
         '$routeParams',
         '$timeout',
         'logService',
-        pageOne
+        serviceMenu
     ]);
 
-    function pageOne($scope, $routeParams, $timeout, log) {
+    function serviceMenu($scope, $routeParams, $timeout, log) {
 
         var vm = this;
 
