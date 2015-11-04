@@ -10,19 +10,41 @@
             }
         },
         {
+            url: '/serviceMenu',
+            config: {
+                templateUrl: 'app/templates/serviceMenu.htm',
+                title: 'Service Menu'
+            }
+        },
+        {
+            url: '/about',
+            config: {
+                templateUrl: 'app/templates/about.htm',
+                title: 'About'
+            }
+        },
+        {
+            url: '/products',
+            config: {
+                templateUrl: 'app/templates/products.htm',
+                title: 'Products'
+            }
+        },
+        {
+            url: '/contact',
+            config: {
+                templateUrl: 'app/templates/contact.htm',
+                title: 'Contact'
+            }
+        },
+        {
             url: '/login',
             config: {
                 templateUrl: 'app/templates/login.htm',
                 title: 'Login'
             }
         },
-        {
-            url: '/pageOne',
-            config: {
-                templateUrl: 'app/templates/pageOne.htm',
-                title: 'Page 1'
-            }
-        },
+
     ];
     angular.module('app').constant('routes', routes);
 
